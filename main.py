@@ -4,7 +4,7 @@ from gi.repository import GLib
 from pydbus import SessionBus
 
 # change this variable if you are using another terminal emulator
-terminal_cmd = 'st'
+terminal_cmd = ['st']
 
 
 class RangerService(object):
@@ -29,11 +29,11 @@ class RangerService(object):
 
     def ShowFolders(self, uris, startup_id):
         uri = format_uri(uris[0])
-        subprocess.Popen([terminal_cmd, 'ranger', uri])
+        subprocess.Popen([*terminal_cmd, 'ranger', uri])
 
     def ShowItems(self, uris, startup_id):
         uri = format_uri(uris[0])
-        subprocess.Popen([terminal_cmd, 'ranger', '--select', uri])
+        subprocess.Popen([*terminal_cmd, 'ranger', '--select', uri])
 
     def ShowItemProperties(self, uris, startup_id):
         self.ShowItems(uris, startup_id)
