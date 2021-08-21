@@ -1,4 +1,5 @@
 import subprocess
+import urllib.parse
 
 from gi.repository import GLib
 from pydbus import SessionBus
@@ -40,7 +41,7 @@ class RangerService(object):
 
 
 def format_uri(uri: str):
-    return uri.replace('file://', '').replace('%20', ' ')
+    return urllib.parse.unquote(uri).replace('file://', '')
 
 
 session_bus = SessionBus()
