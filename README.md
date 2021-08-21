@@ -26,6 +26,11 @@
 
 Run `./install.sh`
 
+### Configuration
+
+Change the `terminal_cmd` variable to whatever you use, for example if you're using gnome-terminal:
+`terminal_cmd=['gnome-terminal', '-x']`
+
 ### Running
 
 `setsid -f ./run.sh`
