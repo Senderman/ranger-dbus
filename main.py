@@ -5,7 +5,7 @@ from gi.repository import GLib
 from pydbus import SessionBus
 
 # change this variable if you are using another terminal emulator
-terminal_cmd = ['st']
+terminal_cmd = ['alacritty', '-e']
 
 
 class RangerService(object):
